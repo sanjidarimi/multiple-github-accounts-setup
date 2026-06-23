@@ -35,4 +35,3 @@ It is highly common for junior developers to confuse **Authentication** with **I
 > * **Identity (Who wrote the code):** Checked by Git logs via your **Author Name/Email**. It dictates whose avatar and email show up next to a commit on a repository history timeline.
 > 
 > 
-```
