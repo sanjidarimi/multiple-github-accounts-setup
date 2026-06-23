@@ -1,44 +1,100 @@
 # 3. Linux Configuration Guide
 
-This guide covers native Linux distributions (Ubuntu, Debian, Fedora, Arch, CentOS, etc.).
+This guide covers native Linux distributions including Ubuntu, Debian, Fedora, Arch Linux, CentOS, and other Linux-based operating systems.
+
+---
 
 ## Step 1: Generate Isolated SSH Keys
 
-Run the following commands in your terminal to create distinct keys for each profile.
+Create separate SSH keys for each GitHub account.
 
 ### Create Personal Key
+
 ```bash
 ssh-keygen -t ed25519 -C "your-personal-email@example.com" -f ~/.ssh/id_ed25519_personal
-Create Work Key
-Bash
+```
+
+### Create Work Key
+
+```bash
 ssh-keygen -t ed25519 -C "your-work-email@company.com" -f ~/.ssh/id_ed25519_work
-🔍 Behind the Command: What do these parameters mean?
--t ed25519: Specifies the encryption algorithm type. Ed25519 is the most modern, highly secure, and computationally efficient cryptographic algorithm used for public-key operations today, vastly superior to older RSA parameters.
+```
 
--C "email": An inline comment to track which identity belongs to which hardware key on GitHub.
+### 🔍 Behind the Command: What Do These Parameters Mean?
 
--f ~/.ssh/filename: Forces the system to save the key under a custom descriptive file name, preventing it from overwriting default credentials.
+#### `-t ed25519`
 
-🔒 Security Warning: When prompted to Enter passphrase, always enter a password. Leaving this blank means anyone who gains physical or digital access to your computer's filesystem can copy your secret keys and compromise your repositories instantly.
+Specifies the encryption algorithm type.
 
-Step 2: Configure the Background SSH Agent
-The SSH Agent manages your private decrypted key certificates in memory. Start the agent using the system execution environment:
+**Ed25519** is a modern public-key cryptography algorithm that offers:
 
-Bash
+* Strong security
+* Faster operations
+* Smaller key sizes
+* Better performance than traditional RSA keys
+
+#### `-C "email"`
+
+Adds a comment to the generated key.
+
+This helps identify which account a key belongs to when viewing SSH keys inside GitHub.
+
+#### `-f ~/.ssh/filename`
+
+Defines a custom filename for the generated SSH key.
+
+This prevents new keys from overwriting existing credentials.
+
+### 🔒 Security Warning
+
+When prompted:
+
+```bash
+Enter passphrase (empty for no passphrase):
+```
+
+Always use a strong passphrase.
+
+Without a passphrase, anyone who gains access to your computer can potentially use your private key and access your repositories.
+
+---
+
+## Step 2: Configure the SSH Agent
+
+The SSH Agent securely stores decrypted private keys in memory so you don't need to enter your passphrase repeatedly.
+
+### Start the SSH Agent
+
+```bash
 eval "$(ssh-agent -s)"
-Add your newly minted secret keys into the manager runtime:
+```
 
-Bash
+### Add Your Keys
+
+```bash
 ssh-add ~/.ssh/id_ed25519_personal
 ssh-add ~/.ssh/id_ed25519_work
-Step 3: Create and Populate your SSH Config File
-Open or create the system SSH configuration file:
+```
 
-Bash
+### Verify Loaded Keys
+
+```bash
+ssh-add -l
+```
+
+---
+
+## Step 3: Create and Configure the SSH Config File
+
+Open (or create) your SSH configuration file:
+
+```bash
 nano ~/.ssh/config
-Paste the following blocks directly into the file:
+```
 
-Plaintext
+Add the following configuration:
+
+```ssh
 # Personal GitHub Account
 Host github.com-personal
   HostName github.com
@@ -52,45 +108,140 @@ Host github.com-work
   User git
   IdentityFile ~/.ssh/id_ed25519_work
   IdentitiesOnly yes
-🧠 Understanding the Schema Line-by-Line:
-Host github.com-personal: This sets your custom routing domain trigger name (your alias). You will use this exact host when checking out or linking code repositories.
+```
 
-HostName github.com: Instructs the computer to resolve the traffic back to the actual real target endpoint server destination.
+### 🧠 Understanding Each Configuration Option
 
-User git: Explicitly logs into GitHub's shared code container server infrastructure.
+#### `Host github.com-personal`
 
-IdentityFile: Points directly to the exact target isolated authentication file.
+Defines a custom SSH alias.
 
-IdentitiesOnly yes: Critical flag. Forces the local system agent to strictly present only the key listed in that explicit declaration file block, preventing cascading authentication fallbacks.
+This alias is what you'll use when cloning repositories.
 
-Save and exit the editor (Ctrl+O, Enter, then Ctrl+X).
+#### `HostName github.com`
 
-Fix safety permission parameters so other users cannot tamper with your configuration adjustments:
+Specifies the actual destination server.
 
-Bash
+Even though you connect using an alias, SSH routes the request to GitHub.
+
+#### `User git`
+
+GitHub SSH authentication always uses the `git` user.
+
+#### `IdentityFile`
+
+Points to the private key associated with that account.
+
+Example:
+
+```ssh
+IdentityFile ~/.ssh/id_ed25519_personal
+```
+
+#### `IdentitiesOnly yes`
+
+Forces SSH to use only the specified key.
+
+This prevents SSH from attempting multiple keys and accidentally authenticating with the wrong account.
+
+### Save and Exit
+
+In Nano:
+
+```text
+Ctrl + O
+Enter
+Ctrl + X
+```
+
+### Secure the Configuration File
+
+Restrict access permissions:
+
+```bash
 chmod 600 ~/.ssh/config
-Step 4: Link Public Certificates to GitHub
-Print your personal public key certificate output:
+```
 
-Bash
+---
+
+## Step 4: Add Public Keys to GitHub
+
+Display your personal public key:
+
+```bash
 cat ~/.ssh/id_ed25519_personal.pub
-Copy the entire string (starts with ssh-ed25519 and ends with your email string comment).
+```
 
-Navigate to GitHub.com -> log in to your Personal Account -> Settings -> SSH and GPG keys -> Click New SSH Key.
+Copy the entire output.
 
-Give it a title describing your device (e.g., Linux-Laptop) and paste the public content.
+Example:
 
-Repeat the exact sequence for your work profile account using:
+```text
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAA... your-personal-email@example.com
+```
 
-Bash
+### Add the Key to GitHub
+
+1. Sign in to GitHub
+2. Navigate to **Settings**
+3. Open **SSH and GPG Keys**
+4. Click **New SSH Key**
+5. Enter a descriptive title
+6. Paste the public key
+7. Save
+
+### Repeat for Work Account
+
+Display the work account public key:
+
+```bash
 cat ~/.ssh/id_ed25519_work.pub
-Step 5: Test Connection Configurations
-Verify that your system aliases route successfully:
+```
 
-Bash
+Add it to the corresponding GitHub account using the same process.
+
+---
+
+## Step 5: Test Your Configuration
+
+Verify that the personal account is working correctly:
+
+```bash
 ssh -T git@github.com-personal
-Expected Output: Hi personal_username! You've successfully authenticated, but GitHub does not provide shell access.
+```
 
-Bash
+Expected output:
+
+```text
+Hi personal_username! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+Verify the work account:
+
+```bash
 ssh -T git@github.com-work
-Expected Output: Hi work_company_username! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+Expected output:
+
+```text
+Hi work_company_username! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+---
+
+## Next Step: Clone Repositories Using Account Aliases
+
+### Personal Account
+
+```bash
+git clone git@github.com-personal:your-username/repository-name.git
+```
+
+### Work Account
+
+```bash
+git clone git@github.com-work:company-name/repository-name.git
+```
+
+Using aliases ensures each repository automatically authenticates with the correct GitHub account.
