@@ -26,20 +26,12 @@ By using SSH keys and Git configuration correctly, you can keep each account com
 ## What You'll Learn
 
 ✅ Set up multiple GitHub accounts on one machine
-
 ✅ Create separate SSH keys for each account
-
 ✅ Configure SSH aliases
-
 ✅ Manage Git commit identities
-
 ✅ Use different emails for work and personal projects
-
 ✅ Fix common SSH and Git issues
-
 ✅ Work with repositories without account conflicts
-
----
 
 ---
 
@@ -71,33 +63,6 @@ Explore our step-by-step chapters to set up your environment:
 | Fedora                    | ✅ Supported |
 | Arch Linux                | ✅ Supported |
 | Other Linux Distributions | ✅ Supported |
-
----
-
-## Documentation
-
-### Getting Started
-
-- Introduction & Architecture
-- Prerequisites
-
-### Setup Guides
-
-- Linux Setup
-- Windows Setup
-
-### Git Configuration
-
-- Git Identity Management
-- Managing Multiple Emails
-
-### Troubleshooting
-
-- Permission Denied (Public Key)
-- Wrong GitHub Account
-- SSH Agent Issues
-- File Permission Errors
-- Git Identity Problems
 
 ---
 
@@ -176,20 +141,6 @@ git clone git@github.com-work:company/repository.git
 That's it.
 
 Your personal repositories will use your personal SSH key, and your work repositories will use your work SSH key.
-
----
-
-## Repository Structure
-
-```text id="p8k2s1"
-docs/
-├── introduction.md
-├── prerequisites.md
-├── linux-setup.md
-├── windows-setup.md
-├── git-identity.md
-└── troubleshooting.md
-```
 
 ---
 
