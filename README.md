@@ -23,23 +23,6 @@ By using SSH keys and Git configuration correctly, you can keep each account com
 
 ---
 
-## What You'll Learn
-
-✅ Set up multiple GitHub accounts on one machine
-
-✅ Create separate SSH keys for each account
-
-✅ Configure SSH aliases
-
-✅ Manage Git commit identities
-
-✅ Use different emails for work and personal projects
-
-✅ Fix common SSH and Git issues
-
-✅ Work with repositories without account conflicts
-
----
 
 ## 🗂️ Documentation Navigation
 
