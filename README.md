@@ -25,7 +25,6 @@ This repository provides a robust, standardized architecture using **SSH Host Al
 
 | OS | Sub-Systems Supported | Recommended Shell |
 | :--- | :--- | :--- |
-| **macOS** | Apple Silicon & Intel | Zsh / Terminal |
 | **Windows** | Windows 10 / 11 | Git Bash / PowerShell |
 | **Linux** | Ubuntu, Debian, Fedora, Arch, etc. | Bash / Zsh |
 
@@ -40,7 +39,6 @@ Explore our step-by-step chapters to set up your environment:
 3.  [**OS Setup Guides**](docs/introduction.md):
     * [Linux Setup Guide](docs/linux-setup.md)
     * [Windows Setup Guide](docs/windows-setup.md)
-    * [macOS Setup Guide](docs/macos-setup.md)
 4.  [**Git Identity Configuration**](docs/git-identity.md) — Managing names and emails perfectly.
 5.  [**Cloning & Working with Repositories**](docs/cloning-repositories.md) — The magic of custom SSH URLs.
 6.  [**Troubleshooting & Resolution Index**](docs/troubleshooting.md) — Fix any issue in under 2 minutes.
