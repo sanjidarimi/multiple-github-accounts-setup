@@ -40,14 +40,11 @@ Explore our step-by-step chapters to set up your environment:
     * [Linux Setup Guide](docs/linux-setup.md)
     * [Windows Setup Guide](docs/windows-setup.md)
 4.  [**Git Identity Configuration**](docs/git-identity.md) — Managing names and emails perfectly.
-5.  [**Cloning & Working with Repositories**](docs/cloning-repositories.md) — The magic of custom SSH URLs.
-6.  [**Troubleshooting & Resolution Index**](docs/troubleshooting.md) — Fix any issue in under 2 minutes.
-7.  [**Frequently Asked Questions (FAQ)**](docs/faq.md) — 20+ answers to your edge-case questions.
-8.  [**Production Best Practices**](docs/best-practices.md) — Security audits, key rotation, and backup strategies.
+5.  [**Troubleshooting & Resolution Index**](docs/troubleshooting.md) — Fix any issue in under 2 minutes.
 
 ---
 
-## 🚀 Quick Start (TL;DR)
+##  Quick Start
 
 If you are an advanced user who just needs the commands, here is the shorthand sequence:
 
