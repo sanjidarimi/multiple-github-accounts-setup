@@ -1,4 +1,3 @@
-```markdown
 # 2. Pre-flight Prerequisites
 
 Before following your specific operating system guide, verify that your local computer has the mandatory dependencies ready.
@@ -8,11 +7,9 @@ Open your terminal application and execute:
 ```bash
 git --version
 
-```
-
 *Expected Output:* `git version 2.x.x` or higher. If Git is missing, download it from [git-scm.com](https://git-scm.com/).
 
-## 2. Check for Existing Keys
+# 2. Check for Existing Keys
 
 Inspect your current SSH configuration directory to verify you are not accidentally overwriting critical system files:
 
@@ -30,5 +27,4 @@ If you've been fighting configuration errors before finding this guide, clear ou
 ```bash
 ssh-add -D
 
-
-*This command safely flushes active keys out of temporary cache memory (it does not delete your physical key files).*
+This command safely flushes active keys out of temporary cache memory (it does not delete your physical key files).
