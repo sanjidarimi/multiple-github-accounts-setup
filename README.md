@@ -1,29 +1,3 @@
-Here is the repository content broken down one by one, starting with the main entry point.
-
----
-
-## 📁 Repository Structure Overview
-
-Here are the files we will generate in order:
-
-1. `README.md` (Main landing page)
-2. `docs/introduction.md` (Concepts & Architecture)
-3. `docs/prerequisites.md` (System requirements)
-4. `docs/linux-setup.md` (Linux implementation)
-5. `docs/windows-setup.md` (Windows configuration)
-6. `docs/macos-setup.md` (macOS integration)
-7. `docs/git-identity.md` (Configuring emails correctly)
-8. `docs/cloning-repositories.md` (Working with remotes)
-9. `docs/troubleshooting.md` (Error dictionary)
-10. `docs/faq.md` (20+ Edge cases)
-11. `docs/best-practices.md` (Security & standards)
-12. `LICENSE` (MIT open-source terms)
-
----
-
-## 📄 File 1: `README.md`
-
-```markdown
 # Managing Multiple GitHub Accounts Setup on One Computer Using SSH
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -103,48 +77,3 @@ Host github.com-work
 
 # 4. Clone your repository using the alias
 git clone git@github.com-personal:username/repo.git
-
-```
-
----
-
-## 📁 Repository Structure
-
-```text
-multiple-github-accounts-setup/
-│
-├── README.md                 # Main navigation and landing page
-│
-├── docs/
-│   ├── introduction.md       # Conceptual foundation
-│   ├── prerequisites.md      # Before you begin checklist
-│   ├── linux-setup.md        # Linux implementation steps
-│   ├── windows-setup.md      # Windows native and Git Bash setups
-│   ├── macos-setup.md        # macOS keychain integration
-│   ├── git-identity.md       # Global vs Local author mapping
-│   ├── cloning-repositories.md # Interacting with remotes safely
-│   ├── troubleshooting.md    # Error dictionary and runtime fixes
-│   ├── faq.md                # Extensive FAQ (20+ Items)
-│   └── best-practices.md     # Auditing, security, and onboarding
-│
-└── LICENSE                   # Open-source MIT License terms
-
-```
-
----
-
-## 🤝 Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**. Please read our [Contributing Guide](https://www.google.com/search?q=docs/CONTRIBUTING.md) for data submission rules.
-
-## 📄 License
-
-Distributed under the MIT License. See [LICENSE](https://www.google.com/search?q=LICENSE) for more information.
-
-```
-
----
-
-Please let me know when you are ready for the next file: `docs/introduction.md`.
-
-```
