@@ -11,11 +11,11 @@ A simple guide for developers who need to use multiple GitHub accounts (Personal
 
 If you use more than one GitHub account, you've probably faced one of these problems:
 
-* Pushed code using the wrong GitHub account
-* Committed with the wrong email address
-* Received `Permission denied (publickey)` errors
-* Constantly switched between accounts
-* Reconfigured Git settings for every project
+- Pushed code using the wrong GitHub account
+- Committed with the wrong email address
+- Received `Permission denied (publickey)` errors
+- Constantly switched between accounts
+- Reconfigured Git settings for every project
 
 The good news is that you don't need to log in and out of GitHub.
 
@@ -41,10 +41,30 @@ By using SSH keys and Git configuration correctly, you can keep each account com
 
 ---
 
+---
+
+## 🗂️ Documentation Navigation
+
+Explore our step-by-step chapters to set up your environment:
+
+1.  [**Introduction & Architecture**](docs/introduction.md) — How SSH and Git isolation work together.
+2.  [**Prerequisites**](docs/prerequisites.md) — System requirements and pre-flight checks.
+3.  [**OS Setup Guides**](docs/introduction.md):
+    * [Linux Setup Guide](docs/linux-setup.md)
+    * [Windows Setup Guide](docs/windows-setup.md)
+    * [macOS Setup Guide](docs/macos-setup.md)
+4.  [**Git Identity Configuration**](docs/git-identity.md) — Managing names and emails perfectly.
+5.  [**Cloning & Working with Repositories**](docs/cloning-repositories.md) — The magic of custom SSH URLs.
+6.  [**Troubleshooting & Resolution Index**](docs/troubleshooting.md) — Fix any issue in under 2 minutes.
+7.  [**Frequently Asked Questions (FAQ)**](docs/faq.md) — 20+ answers to your edge-case questions.
+8.  [**Production Best Practices**](docs/best-practices.md) — Security audits, key rotation, and backup strategies.
+
+---
+
 ## Supported Platforms
 
-| Operating System          | Status      |
-| ------------------------- | ----------- |
+| Operating System          | Status       |
+| ------------------------- | ------------ |
 | Windows 10 / 11           | ✅ Supported |
 | Ubuntu                    | ✅ Supported |
 | Debian                    | ✅ Supported |
@@ -58,26 +78,26 @@ By using SSH keys and Git configuration correctly, you can keep each account com
 
 ### Getting Started
 
-* Introduction & Architecture
-* Prerequisites
+- Introduction & Architecture
+- Prerequisites
 
 ### Setup Guides
 
-* Linux Setup
-* Windows Setup
+- Linux Setup
+- Windows Setup
 
 ### Git Configuration
 
-* Git Identity Management
-* Managing Multiple Emails
+- Git Identity Management
+- Managing Multiple Emails
 
 ### Troubleshooting
 
-* Permission Denied (Public Key)
-* Wrong GitHub Account
-* SSH Agent Issues
-* File Permission Errors
-* Git Identity Problems
+- Permission Denied (Public Key)
+- Wrong GitHub Account
+- SSH Agent Issues
+- File Permission Errors
+- Git Identity Problems
 
 ---
 
